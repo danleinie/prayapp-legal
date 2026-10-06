@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Maná — Rezo y bloqueo de apps</title>
+  <meta name="description" content="Bloquea las apps que elijas hasta que reces. Una oración distinta según cómo te sientas, cada día.">
+
+  <!-- Lo que se ve al pegar el enlace en WhatsApp, Instagram o un mensaje. -->
+  <meta property="og:title" content="Maná — Rezo y bloqueo de apps">
+  <meta property="og:description" content="Antes de abrir el móvil, un minuto para Dios.">
+  <meta property="og:type" content="website">
+
+  <script>
+    /* Manda a cada uno a su tienda nada más abrir. Desde un ordenador no hace
+       nada y se quedan los dos botones de abajo. */
+    (function () {
+      var APP_STORE = "https://apps.apple.com/es/app/id6815617145";
+      var GOOGLE_PLAY = "https://play.google.com/store/apps/details?id=com.dleiva.prayapp";
+      var ua = navigator.userAgent || "";
+      /* Los iPad modernos se presentan como un Mac, pero con pantalla táctil. */
+      var isIOS = /iPhone|iPad|iPod/.test(ua) ||
+        (/Macintosh/.test(ua) && navigator.maxTouchPoints > 1);
+      if (isIOS) location.replace(APP_STORE);
+      else if (/Android/.test(ua)) location.replace(GOOGLE_PLAY);
+    })();
+  </script>
+
+  <style>
+    :root {
+      --background: #F3F0E8;
+      --surface: #FBFAF6;
+      --border: #E6E3D9;
+      --ink: #1F2A24;
+      --ink-muted: #6B7A70;
+      --accent: #2E4A3A;
+      --on-accent: #F7F5EF;
+      --gold: #A8873C;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --background: #141A17;
+        --surface: #1D2621;
+        --border: #2E3A33;
+        --ink: #F2EFE6;
+        --ink-muted: #9FB0A6;
+        --accent: #D8B96A;
+        --on-accent: #141A17;
+        --gold: #D8B96A;
+      }
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px;
+      background: var(--background);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      text-align: center;
+    }
+    main {
+      width: 100%;
+      max-width: 420px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      padding: 40px 24px;
+    }
+    .label {
+      color: var(--gold);
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      margin: 0 0 12px;
+    }
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight: 400;
+      font-size: 34px;
+      line-height: 1.15;
+      margin: 0 0 12px;
+    }
+    p.lead {
+      color: var(--ink-muted);
+      font-size: 17px;
+      line-height: 1.5;
+      margin: 0 0 32px;
+    }
+    .stores { display: grid; gap: 12px; }
+    .stores a {
+      display: block;
+      padding: 16px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: var(--on-accent);
+      font-size: 17px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .stores a.secondary {
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid var(--border);
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <p class="label">Maná</p>
+    <h1>Recupera ese minuto.</h1>
+    <p class="lead">Bloquea las apps que elijas hasta que reces. Una oración distinta según cómo te sientas, cada día.</p>
+    <div class="stores">
+      <a href="https://apps.apple.com/es/app/id6815617145">Descargar en la App Store</a>
+      <a class="secondary" href="https://play.google.com/store/apps/details?id=com.dleiva.prayapp">Descargar en Google Play</a>
+    </div>
+  </main>
+</body>
+</html>
